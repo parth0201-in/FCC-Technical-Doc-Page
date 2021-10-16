@@ -64,7 +64,7 @@
   }
   
   .nav-link:hover{
-    box-shadow:inset 280px 0 0 0 hsl(0,0%,90%);
+    box-shadow:inset 340px 0 0 0 hsl(0,0%,90%);
     color:black;
   }
   .nav-link:focus{
