@@ -1,0 +1,246 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  html,body{
+    scroll-behavior:smooth;
+    min-width:275px;
+    width:100%;
+    height:100%;
+    font-family:sans-serif;
+    font-weight:400;
+    font-size:1rem;
+    background:hsl(0,0%,97%);
+  }
+  
+  /*Main document holding everything else*/
+  #main-doc{
+    width:100%;
+    min-width:275px;
+    height:auto;
+    display:flex;
+    flex-wrap:wrap;
+    overflow:hidden;
+  }
+  
+  /*Navigation Div holding navbar*/
+  .navigation{
+    min-width:275px;
+    height:100%;
+    width:18%;
+    position:fixed;
+    left:0;
+    overflow:auto;
+    font-size:1.1rem;
+    background:black;
+    color:hsl(0,0%,90%);
+    scrollbar-width:thin;
+  }
+  
+  /*Main documentation heading*/
+  #navbar #header{
+    padding:20px 10px;
+  }
+  
+  #navbar ul{
+    width:100%;
+  }
+  
+  #navbar li{
+    color:transparent;
+  }
+  
+  /*nav-link anchors holding navigation reference*/
+  .nav-link{
+    display:block;
+    width:100%;
+    border:2px solid hsl(0,0%,90%);
+    padding:10px 0px 10px 10px;
+    text-decoration:none;
+    color:hsl(0,0%,90%);  
+    transition:0.3s ease-out;
+  }
+  
+  .nav-link:hover{
+    box-shadow:inset 280px 0 0 0 hsl(0,0%,90%);
+    color:black;
+  }
+  .nav-link:focus{
+    outline:3px solid blue;
+    border:none;
+  }
+  
+  
+  /*Documentation Div holding the complete documentation*/
+  .documentation{
+    min-width:275px;
+    /*You can actually do this.*/
+    margin-left:max(18%,275px);
+    width:82%;
+    padding:0px 30px;
+    line-height:1.4;
+    font-size:1.1rem;
+  }
+  
+  .documentation *{
+    margin:30px auto;
+  }
+  
+  .main-section > p{
+    margin-left:25px;
+  }
+  
+  /*Inline code selector*/
+  code:not(.red-box code,.output-box code){
+    background:hsl(0,0%,75%);
+    border-radius:5px;
+  }
+  
+  img{
+    display:block;
+    max-width:100%;
+    min-width:275px;
+  }
+  
+  /*Lists in the Documentation Div*/
+  .list{
+    margin-left:50px;
+  }
+  
+  /*Genral box design class*/
+  .box{
+    border-radius:10px;
+    padding:20px 20px 20px 20px;
+  }
+  
+  /*Box holding various code examples*/
+  .grey-box{
+    background:hsl(0,0%,75%);
+  }
+  
+  /*box holding important notes to remember*/
+  .blue-box{
+    background:hsl(200,80%,75%);
+  }
+  
+  /*box holding wrong code or coding practice*/
+  .red-box{
+    background:hsl(0,80%,75%);
+  }
+  
+  /*box holding ouput of example code*/
+  .output-box{
+    border:1px solid darkblue;
+    background:hsl(0,0%,97%);
+  }
+  
+  /*Image in an output-box*/
+  .output-image{
+    display:block;
+    min-width:200px;
+    margin:0px auto 0px 0px;
+  }
+  
+  .navbar-jump{
+    width:1px;
+    height:1px;
+    position:absolute;
+    margin-left:-10000px;
+  }
+  
+  .example-item{
+    list-style-type:none
+  }
+  
+  @media(max-width:960px){
+    /*For screen sizes of ipad and below*/
+    #main-doc{
+      width:100%;
+      height:auto;
+      display:flex;
+      flex-wrap:wrap;
+      overflow:hidden;
+    }
+    .navigation{
+      position:static;
+      width:100%;
+      height:300px;
+      font-size:1rem;
+      z-index:5;
+    }
+    #navbar{
+      display:flex;
+      width:100%;
+      flex-wrap:wrap;
+    }
+    #navbar ul{
+      width:100%;
+    }
+    .nav-link:hover{
+      box-shadow:inset 100vw 0 hsl(0,0%,90%);
+    }
+    
+    /*Navigation Jump to jump back to index*/
+    .navbar-jump{
+      position:fixed;
+      top:10px;
+      right:10px;
+      margin-left:-30px;
+      width:50px;
+      height:auto;
+      display:flex;
+      justify-content:center;
+      z-index:3;
+      opacity:1;
+    }
+    
+    /*Navigation jump anchor*/
+    .navbar-jump a{
+      display:block;
+      width:100%;
+      background:black;
+      opacity:0.6;
+      color:white;
+      text-decoration:none;
+      padding:4px;
+      border-radius:5px;
+    }
+    
+    /*Click event for navbar-jump*/
+    .navbar-jump a:active{
+      opacity:1;
+      background:darkblue;
+      color:white;
+    }
+    
+    /*Design for smaller screen size*/
+    .documentation{
+      margin:0;
+      padding:10px;
+      width:100%;
+      font-size:0.9rem;
+      z-index:2;
+    }
+    img{
+      display:block;
+      max-width:100%;
+      min-width:275px;
+    }
+    .box{
+      padding:10px;
+      word-break:break-word;
+    }
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0); 
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap; 
+      width: 1px;
+    }
+  
+  
+  }
